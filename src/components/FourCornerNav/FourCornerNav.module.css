@@ -1,0 +1,81 @@
+.corner {
+    position: fixed;
+    z-index: 9999;
+    padding: 1.5rem;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    mix-blend-mode: difference; /* Ensures visibility over anything (dark/light) */
+    color: white; /* Will appear Black on White bg due to difference, and White on Black */
+    pointer-events: auto;
+}
+
+.topLeft {
+    top: 0;
+    left: 0;
+}
+
+.topRight {
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.bottomLeft {
+    bottom: 0;
+    left: 0;
+}
+
+.bottomRight {
+    bottom: 0;
+    right: 0;
+}
+
+.menuOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    color: white;
+    z-index: 9998; /* Just below corners */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.menuOverlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.menuItem {
+    font-size: 4rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color: #888;
+}
+
+.menuItem:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .corner {
+        padding: 1rem;
+    }
+    .menuItem {
+        font-size: 3rem;
+    }
+}

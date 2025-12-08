@@ -1,34 +1,22 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import type { Metadata } from 'next';
+import './main.css';
 
 export const metadata: Metadata = {
-  title: "Vibes To Stardom",
-  description: "Something big is coming to Vibes To Stardom",
+  title: 'VIBESTOSTARDOM | From Raw Talent to Star-Quality Impact',
+  description: 'VIBESTOSTARDOM discovers, nurtures, and elevates talent. We manage careers, produce content, and build platforms for lasting impact.',
+  icons: {
+    icon: '/vts-favicon.jpg',
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

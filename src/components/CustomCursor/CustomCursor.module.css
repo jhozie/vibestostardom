@@ -1,0 +1,26 @@
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+    will-change: top, left, width, height;
+}
+
+.cursor.hovering {
+    width: 80px;
+    height: 80px;
+}
+
+@media (pointer: coarse) {
+    .cursor {
+        display: none; /* Hide on touch devices */
+    }
+}

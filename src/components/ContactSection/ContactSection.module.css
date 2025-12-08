@@ -1,0 +1,22 @@
+.section {
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-primary) 100%);
+    border-top: 1px solid var(--glass-border);
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.headline {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.btnLg {
+    margin-top: var(--spacing-md);
+    padding: 1.5rem 3rem;
+    font-size: 1.25rem;
+}

@@ -1,0 +1,123 @@
+.section {
+    padding: var(--spacing-xl) 0;
+    min-height: 80vh;
+    background: white;
+    /* Inverted to White */
+    color: black;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Abstract Background Animation - Adjusted for Light Mode */
+.section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    /* Subtle grey pulse on white */
+    background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.03), transparent 60%);
+    animation: pulse 10s infinite alternate;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1) translate(-20%, -20%);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.2) translate(0, 0);
+        opacity: 0.8;
+    }
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+/* The Kinetic Text Stack */
+.manifestoWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+
+.outlineText {
+    font-size: clamp(4rem, 9vw, 10rem);
+    line-height: 0.85;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: var(--font-family-sans);
+    color: transparent;
+    /* Black Outline */
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+}
+
+.outlineText:hover {
+    color: black;
+    -webkit-text-stroke: 1px black;
+    transform: scale(1.02);
+}
+
+.solidText {
+    font-size: clamp(4rem, 9vw, 10rem);
+    line-height: 0.85;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: var(--font-family-art);
+    color: black;
+    letter-spacing: -0.04em;
+    margin-top: var(--spacing-sm);
+    /* Dark Gradient Text Effect */
+    background: linear-gradient(to right, #000, #555, #000);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.copyWrapper {
+    max-width: 600px;
+    margin: var(--spacing-lg) auto 0;
+}
+
+.copy {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+    /* Dark text */
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .section {
+        min-height: auto;
+        padding: var(--spacing-lg) 2rem;
+        /* Reduced padding */
+    }
+
+    .outlineText,
+    .solidText {
+        font-size: clamp(2.5rem, 8vw, 3.5rem);
+        /* Safer clamping */
+    }
+}

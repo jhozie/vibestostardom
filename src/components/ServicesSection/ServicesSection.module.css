@@ -1,0 +1,77 @@
+.section {
+    padding: calc(var(--spacing-xl) * 1.5) 0 var(--spacing-xl) 0;
+    background: white;
+}
+
+.header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.listItem {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 3rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.listItem:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.listItem:hover .itemTitle {
+    transform: translateX(20px);
+    font-style: italic;
+    /* Syne is now default */
+}
+
+.itemTitle {
+    font-family: var(--font-family-art);
+    /* Syne by default */
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    flex: 1;
+}
+
+.itemDesc {
+    width: 40%;
+    color: #666;
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    transform: translateY(20px);
+}
+
+.listItem:hover .itemDesc {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .listItem {
+        flex-direction: column;
+    }
+
+    .itemTitle {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .itemDesc {
+        width: 100%;
+        opacity: 1;
+        /* Always show on mobile */
+        transform: none;
+    }
+}

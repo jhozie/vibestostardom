@@ -1,0 +1,60 @@
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 5%;
+}
+
+.headline {
+    font-size: 8vw; /* Responsive huge sizing */
+    line-height: 0.9;
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: black;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.line {
+    display: block;
+    overflow: hidden; /* For stagger reveals if desired */
+}
+
+.serif {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 300;
+    text-transform: none; /* Keep natural case for serif elegance */
+    margin: 0 0.5rem;
+}
+
+.videoBg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40vw; /* Small centered viewport */
+    height: 60vh;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.8;
+    filter: grayscale(100%);
+    mix-blend-mode: multiply; /* Blends nicely with white */
+    border-radius: 999px; /* Pill shape for "Artistic" feel */
+}
+
+@media (max-width: 768px) {
+    .headline {
+        font-size: 15vw;
+    }
+    .videoBg {
+        width: 80vw;
+        height: 50vh;
+    }
+}

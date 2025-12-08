@@ -1,0 +1,49 @@
+.marqueeContainer {
+    width: 100%;
+    overflow: hidden;
+    background: black;
+    color: white;
+    padding: 1.5rem 0;
+    display: flex;
+    position: relative;
+    z-index: 10;
+}
+
+.track {
+    display: flex;
+    white-space: nowrap;
+    animation: scrollLeft 20s linear infinite;
+    /* Ensure smooth rendering */
+    will-change: transform;
+}
+
+.item {
+    font-family: var(--font-family-art);
+    /* Using Syne for artistic flair */
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-right: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

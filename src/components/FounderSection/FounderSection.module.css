@@ -1,0 +1,138 @@
+.section {
+    padding: var(--spacing-xl) 0;
+    background: black;
+    /* High contrast Dark Mode for this section */
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.headerWrapper {
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: var(--spacing-sm);
+}
+
+.headline {
+    font-size: clamp(3rem, 8vw, 8rem);
+    /* Massive responsive text */
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    font-family: var(--font-family-art);
+    /* Syne */
+    text-transform: uppercase;
+    color: white;
+}
+
+.subheadline {
+    font-family: var(--font-family-sans);
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: var(--spacing-sm);
+    max-width: 600px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    /* Image takes slightly less space */
+    gap: var(--spacing-lg);
+    align-items: flex-start;
+}
+
+.imageCol {
+    position: relative;
+}
+
+.founderImage {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    filter: grayscale(100%) contrast(1.1);
+    transition: filter 0.5s ease;
+}
+
+.founderImage:hover {
+    filter: grayscale(0%) contrast(1);
+}
+
+.textCol {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.paragraph {
+    font-size: 1.25rem;
+    /* Larger than body */
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+}
+
+.highlightBox {
+    border: 1px solid white;
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    position: relative;
+}
+
+.highlightBox::after {
+    content: "VISION";
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: black;
+    padding: 0 10px;
+    font-family: var(--font-family-art);
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.visionStatement {
+    font-family: var(--font-family-art);
+    /* Syne for the quote too */
+    font-size: 1.5rem;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.ctaWrapper {
+    margin-top: var(--spacing-lg);
+}
+
+/* Invert button for this section */
+.invertBtn {
+    background: white;
+    color: black;
+    border: 1px solid white;
+}
+
+.invertBtn:hover {
+    background: black;
+    color: white;
+}
+
+@media (max-width: 900px) {
+    .section {
+        padding: var(--spacing-lg) 0;
+        /* Reduced padding for mobile */
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .headline {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+        /* More responsive clamp */
+    }
+}
