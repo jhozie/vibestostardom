@@ -1,4 +1,4 @@
-'use client'; 
+'use client';
 
 import HeroSection from '@/components/HeroSection/HeroSection';
 import AboutSection from '@/components/AboutSection/AboutSection';
@@ -7,8 +7,6 @@ import VisionSection from '@/components/VisionSection/VisionSection';
 import FounderSection from '@/components/FounderSection/FounderSection';
 import ContactSection from '@/components/ContactSection/ContactSection';
 import Marquee from '@/components/Marquee/Marquee';
-import FourCornerNav from '@/components/FourCornerNav/FourCornerNav';
-import CustomCursor from '@/components/CustomCursor/CustomCursor';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
 
 export default function Home() {
@@ -16,10 +14,8 @@ export default function Home() {
 
   return (
     <main>
-      <CustomCursor />
-      <FourCornerNav />
-      {/* Old Navbar Removed */}
-      
+      {/* Global Nav & Cursor are handled in Layout via RootLayout */}
+
       <HeroSection />
       <Marquee />
       <AboutSection />

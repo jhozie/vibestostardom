@@ -1,0 +1,130 @@
+.main {
+    padding-top: 150px;
+    padding-bottom: var(--spacing-xl);
+    padding-top: 150px;
+    padding-bottom: var(--spacing-xl);
+    background: white;
+    /* Changed from bg-secondary for clean look */
+    min-height: 100vh;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    font-family: var(--font-family-art);
+    font-size: clamp(3rem, 10vw, 6rem);
+    text-transform: uppercase;
+    line-height: 0.9;
+    margin-bottom: var(--spacing-sm);
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: #666;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.card {
+    display: block;
+    background: transparent;
+    /* Remove white card bg */
+    border-radius: 0;
+    /* Sharp corners */
+    overflow: visible;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    border: none;
+    /* Remove border */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    /* Minimal separator */
+    padding-bottom: 2rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: none;
+    /* No shadow */
+    opacity: 0.8;
+}
+
+.imageWrapper {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.card:hover .image {
+    transform: scale(1.05);
+}
+
+.content {
+    padding: 1.5rem 0 0 0;
+    /* Remove side padding */
+    display: flex;
+    flex-direction: column;
+}
+
+.date {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #999;
+    margin-bottom: 0.5rem;
+}
+
+.postTitle {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-family: var(--font-family-sans);
+}
+
+.excerpt {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.readMore {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: auto;
+    display: inline-block;
+    border-bottom: 1px solid black;
+    width: fit-content;
+    padding-bottom: 2px;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

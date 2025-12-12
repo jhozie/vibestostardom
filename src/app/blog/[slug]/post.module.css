@@ -1,0 +1,107 @@
+.main {
+    padding-top: 150px;
+    /* Header clearance */
+    padding-bottom: var(--spacing-xl);
+    background: white;
+    min-height: 100vh;
+}
+
+.article {
+    max-width: 800px;
+    /* Optimal reading width */
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.header {
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.backLink {
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.backLink:hover {
+    opacity: 1;
+}
+
+.meta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.title {
+    font-family: var(--font-family-sans);
+    font-weight: 800;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+}
+
+.heroImageWrapper {
+    width: 100%;
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: var(--spacing-lg);
+}
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #333;
+    font-family: 'Georgia', serif;
+    /* Use serif for long-form reading comfort */
+}
+
+/* Rich Text Styles */
+.content p {
+    margin-bottom: 1.5rem;
+}
+
+.content h2 {
+    font-family: var(--font-family-sans);
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.footer {
+    margin-top: var(--spacing-xl);
+    border-top: 1px solid #eee;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.share {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #999;
+}
+
+@media (max-width: 768px) {
+    .heroImageWrapper {
+        height: 300px;
+    }
+}

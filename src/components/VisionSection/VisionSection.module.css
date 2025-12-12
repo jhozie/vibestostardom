@@ -111,13 +111,38 @@
 @media (max-width: 768px) {
     .section {
         min-height: auto;
-        padding: var(--spacing-lg) 2rem;
-        /* Reduced padding */
+        padding: 4rem 1rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .outlineText,
     .solidText {
-        font-size: clamp(2.5rem, 8vw, 3.5rem);
-        /* Safer clamping */
+        /* Force break if word is too long */
+        font-size: clamp(2rem, 10vw, 3rem);
+        /* Slightly adjusted clamp */
+        line-height: 1.1;
+        width: 100%;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        /* Critical for long single words like MANAGEMENT */
+        hyphens: auto;
+    }
+
+    .copyWrapper {
+        margin-top: 2rem;
+        width: 100%;
+        padding: 0 1rem;
+        box-sizing: border-box;
+    }
+
+    .copy {
+        font-size: 1rem;
+        /* Smaller readable font for mobile */
+        text-align: center;
     }
 }

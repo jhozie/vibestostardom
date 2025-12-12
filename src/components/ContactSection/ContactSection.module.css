@@ -1,8 +1,10 @@
 .section {
     padding: var(--spacing-xl) 0;
     text-align: center;
-    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-primary) 100%);
-    border-top: 1px solid var(--glass-border);
+    background: white;
+    color: black;
+    /* Explicitly black text */
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .container {

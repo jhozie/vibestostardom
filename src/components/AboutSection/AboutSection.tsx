@@ -10,7 +10,7 @@ export default function AboutSection() {
                     {/* Background Image Layer */}
                     <div className={`${styles.imageContainer} reveal`}>
                         <img
-                            src="https://images.unsplash.com/photo-1493225255756-d9584f8606e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                            src="/fash.jpg"
                             alt="Talent"
                             className={styles.image}
                         />
